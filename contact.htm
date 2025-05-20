@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsive Contact Form</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #DFF1E6;
+    }
+
+    .form-container {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    
+
+    .form-row {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .form-group {
+      flex: 1;
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+
+    .query-type-container {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .query-type-option {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      border: 1px solid #ccc;
+      padding: 8px 10px;
+      border-radius: 5px;
+      background-color: white;
+    }
+
+    .query-type-option input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    .query-type-option input[type="text"] {
+      border: none;
+      outline: none;
+      flex: 1;
+      font-size: 15px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .checkbox-group {
+      margin-top: 10px;
+    }
+
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: normal;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-COLOR: #0D7C69;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: 0C7D69;
+    }
+
+    @media (max-width: 600px) {
+      .form-row {
+        flex-direction: column;
+      }
+
+      .query-type-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Contact Us</h2>
+    <form>
+
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName"><font size="1">First Name*</font></label>
+          <input type="text" id="firstName" name="firstName" required>
+        </div>
+        <div class="form-group">
+          <label for="lastName"><font size="1">Last Name*</font></label>
+          <input type="text" id="lastName" name="lastName" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email"><font size="1">Email*</font></label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+
+      <div class="form-group">
+        <label><font size="1">Query Type*</font></label>
+        <div class="query-type-container">
+          <div class="query-type-option">
+            <input type="radio" name="queryType" id="feedbackRadio">
+            <input type="text" placeholder="General Inquiry">
+          </div>
+          <div class="query-type-option">
+            <input type="radio" name="queryType" id="supportRadio">
+            <input type="text" placeholder="Support Request">
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="form-group">
+        <label for="message"><font size="1">Message*</font></label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+
+      
+      <div class="checkbox-group">
+        <label>
+          <input type="checkbox" name="agree" required>
+          <font size="1">I consent to being contacted by the team*</font>
+        </label>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+</body>
+</html>
